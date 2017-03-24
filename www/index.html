@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+        <title>ERES APP</title>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src * 'unsafe-inline' 'unsafe-eval'; object-src *; style-src 'self' data: 'unsafe-inline' * ; img-src 'self' data: *; media-src *; frame-src * gap://*; font-src *; connect-src *">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src *; script-src * 'unsafe-inline' 'unsafe-eval'; object-src *; style-src 'self' data: 'unsafe-inline' * ; img-src 'self' data: *; media-src *; frame-src * gap://*; font-src *; connect-src *">
+        <meta http-equiv="X-WebKit-CSP" content="default-src *; script-src * 'unsafe-inline' 'unsafe-eval'; object-src *; style-src 'self' data: 'unsafe-inline' * ; img-src 'self' data: *; media-src *; frame-src * gap://*; font-src *; connect-src *">
+
+        <link href="assets/lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="assets/lib/angular-toastr-master/dist/angular-toastr.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+
+        <!-- ionic/angularjs js -->
+
+        <script src="assets/lib/ionic/js/ionic.bundle.js"></script>
+        <script src="assets/lib/angular/angular-ui-router.min.js"></script>
+        <!--change this from cdn-->
+        <script src="assets/lib/moment/min/moment.min.js"></script>
+        <script src="assets/lib/moment/locale/pt-br.js"></script>
+
+
+        <script src="assets/lib/angular/angular-animate.min.js"></script>
+        <script src="assets/lib/angular-moment/angular-moment.min.js"></script>
+        <script src="assets/lib/angular-toastr-master/dist/angular-toastr.tpls.min.js"></script>   
+        <script type="text/javascript" src="assets/lib/angular-input-masks/releases/angular-input-masks-standalone.min.js"></script>
+
+        <script src="assets/lib/console-image/console-image.js"></script>
+        <script src="assets/lib/ionic-image-lazy-loading/ionic-image-lazy-loading.js"></script>
+
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="assets/lib/ng-cordova/dist/ng-cordova.js"></script>
+        <script src="cordova.js"></script>
+
+        <!-- laaap script.js -->
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/config.js"></script>
+
+        <script src="assets/js/services/eresApi.js"></script>
+        <script src="assets/js/services/eresData.js"></script>
+        <script src="assets/js/services/eresLogin.js"></script>
+        <script src="assets/js/services/eresPopup.js"></script>
+
+        <script src="assets/js/directives/ngEnter.js"></script>
+        <script src="assets/js/directives/miniCurrentlyPlayng.js"></script>
+
+        <script src="assets/js/controllers/SplashscreenController.js"></script>
+        <script src="assets/js/controllers/LoginController.js"></script>
+        <script src="assets/js/controllers/ForgetPasswordController.js"></script>
+        <script src="assets/js/controllers/DashboardController.js"></script>
+        <script src="assets/js/controllers/EventController.js"></script>
+        <script src="assets/js/controllers/PhotosController.js"></script>
+        <script src="assets/js/controllers/RecadosController.js"></script>
+        <script src="assets/js/controllers/SsmaController.js"></script>
+        <script src="assets/js/controllers/DicasController.js"></script>
+        <script src="assets/js/controllers/PollsController.js"></script>
+        <script src="assets/js/controllers/SinglepostController.js"></script>
+        <script src="assets/js/controllers/ProfileController.js"></script>
+        <script src="assets/js/controllers/SinglepopupController.js"></script>
+        <script src="assets/js/controllers/EditPhotoController.js"></script>
+        <script src="assets/js/controllers/AddPhotoController.js"></script>
+        <script src="assets/js/controllers/SinglePhotoController.js"></script>
+        <script src="assets/js/controllers/SingleRecadosController.js"></script>
+        <script src="assets/js/controllers/RadioScheduleController.js"></script>
+    </head>
+    <body ng-app="eresApp">
+    <ion-nav-bar class="background-yellow" align-title="center" id="la-header" ng-show="!hideHeader">
+        <ion-nav-back-button class="button button-clear button-dark" ><&nbsp;VOLTAR
+        </ion-nav-back-button>
+        <ion-nav-buttons side="right">
+            <!--            <button  ui-sref="dashboard" class="button button-icon icon ion-home" data-ng-hide="$state.includes('login')"></button>-->
+            <button  ui-sref="dashboard" class="button button-icon" data-ng-hide="$state.includes('login') || $state.includes('forgetpassword')">
+                <img class="home-icon" src="assets/img/home.png" alt="home-icon">
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view>
+    </ion-nav-view>
+    <ion-footer-bar class="background-yellow footer-block" id="la-footer" data-ng-hide="$state.includes('dashboard')">
+    </ion-footer-bar>
+</body>
+</html>
